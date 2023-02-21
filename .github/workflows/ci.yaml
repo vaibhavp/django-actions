@@ -63,7 +63,7 @@ jobs:
         uses: docker/login-action@v2
         with:
           username: ${{ github.actor }}
-          password: ${{ secrets.GIT_DOCKER_PAT }}
+          password: ${{ secrets.GITHUB_TOKEN }}
           registry: ghcr.io
       - name: Build & Publish Image # we are using a public GitHub Action to build and publish docker image to our GCR registry.
         uses: docker/build-push-action@v1
@@ -71,7 +71,7 @@ jobs:
           app_name: app
         with:
           username: ${{ github.actor }} # default for gcr.io
-          password: ${{ secrets.GIT_DOCKER_PAT }} # service account file to be set as secret
+          password: ${{ secrets.GITHUB_TOKEN }} # service account file to be set as secret
           registry: ghcr.io # github registry domain
           repository: vaibhavp/django-actions/app # GKE_PROJECT is out GCP Project id to be set as secret.
           tag_with_sha: true # this will tag our image with commit id. For example our image our be gcr.io/project-id/github-django-actions/app:sha-7865423 where 7865423 is the short sha of our commit.

@@ -1,6 +1,9 @@
-image: custom-value
-user: custom-value
-password: custom-value
-host: custom-value
-port: custom-value
-name: custom-value
+image: ghcr.io/vaibhavp/django-actions/app
+version: sha-86662a9
+user: postgres
+password: postgres
+name: github-actions
+postgresql:
+  enabled: true
+  auth.postgresPassword: postgres
+  auth.database:

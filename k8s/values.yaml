@@ -3,6 +3,8 @@ version: sha-6b95d93
 user: postgres
 password: postgres
 name: github-actions
+host: "{{ tpl .Release.Name }}-postgresql"
+port: "5432"
 postgresql:
   enabled: true
   auth.postgresPassword: postgres

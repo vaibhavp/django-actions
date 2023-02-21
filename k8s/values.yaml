@@ -1,5 +1,5 @@
 image: ghcr.io/vaibhavp/django-actions/app
-version: sha-86662a9
+version: master-e3b285e
 user: postgres
 password: postgres
 name: github-actions
